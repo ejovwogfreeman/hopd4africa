@@ -1,0 +1,37 @@
+.news-comp {
+  text-align: center;
+  background-color: rgb(31, 31, 71);
+  color: whitesmoke;
+  padding: 100px 5%;
+}
+.news-comp img {
+  width: 500px;
+  border: 2px solid white;
+}
+
+.news-comp h1 {
+  font-size: 50px;
+}
+
+.news-comp p {
+  font-size: 25px;
+  margin: 50px 0px;
+}
+
+@media screen and (max-width: 960px) {
+  .news-comp img {
+    width: 100%;
+  }
+  .news-comp h1 {
+    font-size: 40px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .news-comp h1 {
+    font-size: 30px;
+  }
+  .news-comp {
+    padding: 100px 2%;
+  }
+}

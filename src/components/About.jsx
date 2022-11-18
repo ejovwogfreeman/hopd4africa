@@ -8,7 +8,7 @@ const About = () => {
     <div className="about">
       <div className="about-cont">
         <div className="logo">
-          <h1 style={{ margin: "50px 0px 80px" }}>hope4africa</h1>
+          <h1 style={{ margin: "50px 0px 80px" }}>Hope4Africa</h1>
         </div>
         <div className="contents">
           <div className="img">
