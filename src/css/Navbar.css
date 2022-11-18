@@ -1,0 +1,134 @@
+nav {
+  color: rgb(31, 31, 71);
+  background-color: white;
+  position: fixed;
+  width: 100%;
+}
+nav a {
+  color: rgb(31, 31, 71);
+}
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 5%;
+  height: 40px;
+  color: white;
+  background-color: rgb(31, 31, 71);
+}
+.top-nav .mail-cont .mail {
+  margin-right: 3px;
+}
+.top-nav div {
+  display: flex;
+  align-items: center;
+}
+
+.top-nav .icons {
+  display: flex;
+}
+
+.top-nav .icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 50%;
+  margin-left: 10px;
+  color: white;
+  border: 1px solid white;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 5%;
+  background-color: rgba(256, 256, 256, 0.1);
+  height: 80px;
+}
+.main-nav .links {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav .links a {
+  margin-left: 30px;
+}
+
+.heart {
+  margin-top: 3px;
+  margin-right: 3px;
+}
+
+.main-nav .links .donate {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(31, 31, 71);
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: 0.5s ease-in-out;
+}
+
+.main-nav .links .donate:hover {
+  display: flex;
+  align-items: center;
+  color: white;
+  background-color: rgb(31, 31, 71);
+}
+
+.main-nav .right {
+  display: none;
+}
+
+.show {
+  position: fixed;
+  width: 70%;
+  z-index: 100000;
+  background-color: black;
+  color: white;
+  height: 100vh;
+  left: 0;
+  margin-left: 0px;
+  transition: 0.5s ease-in-out;
+}
+
+.hide {
+  position: fixed;
+  margin-left: -300px;
+}
+
+.showall {
+  display: none;
+}
+
+@media only screen and (max-width: 960px) {
+  .showall {
+    display: block;
+  }
+  .main-nav .links {
+    display: none;
+  }
+  .main-nav .right {
+    display: block;
+    font-size: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .top-nav,
+  .main-nav {
+    padding: 0px 2%;
+  }
+  .top-nav .icons a {
+    margin-left: 5px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .top-nav .mail-cont .mail {
+    display: none;
+  }
+}

@@ -1,0 +1,84 @@
+header {
+  padding-top: 120px;
+}
+
+.header-content {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../assets/img2.jpg");
+  width: 100%;
+  height: 500px;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  color: white;
+  padding: 0px 5%;
+}
+
+.header-content div {
+  text-align: right;
+}
+
+.header-content div h1 {
+  font-size: 50px;
+}
+
+.header-content div p {
+  font-size: 22px;
+  margin: 20px 0px;
+}
+
+.header-content div span {
+  display: flex;
+  justify-content: right;
+}
+
+.header-content div .donate {
+  display: flex;
+  align-items: center;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: 0.5s ease-in-out;
+}
+
+.header-content div .donate:hover {
+  display: flex;
+  align-items: center;
+  color: rgb(31, 31, 71);
+  border: 1px solid rgb(31, 31, 71);
+  background-color: white;
+}
+
+@media only screen and (max-width: 960px) {
+  .header-content {
+    justify-content: center;
+  }
+  .header-content div {
+    text-align: center;
+  }
+  .header-content div h1 {
+    font-size: 40px;
+  }
+  .header-content div span {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .header-content {
+    padding: 0px 1%;
+  }
+
+  .header-content div h1 {
+    font-size: 30px;
+  }
+
+  .header-content div p {
+    font-size: 20px;
+  }
+}
