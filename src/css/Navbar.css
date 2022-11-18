@@ -81,6 +81,25 @@ nav a {
   display: none;
 }
 
+.close {
+  font-size: 30px;
+  text-align: right;
+  padding-top: 20px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.show-cont {
+  position: fixed;
+  width: 100%;
+  z-index: 100000;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  height: 100vh;
+  left: 0;
+  margin-left: 0px;
+}
+
 .show {
   position: fixed;
   width: 70%;
@@ -135,7 +154,7 @@ nav a {
 
 .mobile-links {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 15px;
   padding: 0px 20px;
 }
 

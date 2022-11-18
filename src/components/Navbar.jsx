@@ -9,14 +9,18 @@ import {
   FaInstagramSquare,
   FaLinkedin,
 } from "react-icons/fa";
-import { AiOutlineMenu, AiOutlineCloseSquare } from "react-icons/ai";
+import { AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(!open);
+  };
   return (
     <>
-      <NavbarMobile open={open} />
+      <NavbarMobile open={open} handleOpen={handleOpen} />
       <nav>
         <div className="top-nav">
           <div className="mail-cont">
@@ -70,11 +74,7 @@ const Navbar = () => {
           </ul>
           <div className="right">
             <span className="mobileNav">
-              {open ? (
-                <AiOutlineCloseSquare onClick={() => setOpen(!open)} />
-              ) : (
-                <AiOutlineMenu onClick={() => setOpen(!open)} />
-              )}
+              <AiOutlineMenu onClick={() => setOpen(!open)} />
             </span>
           </div>
         </div>
