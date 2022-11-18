@@ -1,2 +1,2 @@
-# hopd4africa
+# hope4africa
 Hope4africa project
