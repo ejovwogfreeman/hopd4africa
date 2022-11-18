@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "../css/Navbar.css";
+import { Link } from "react-router-dom";
+import { AiOutlineHeart } from "react-icons/ai";
 
 const NavbarMobile = ({ open }) => {
   const [hide, setHide] = useState(false);
@@ -11,9 +13,32 @@ const NavbarMobile = ({ open }) => {
       {hide ? (
         <div className={open ? "show" : "hide"}>
           <ul>
-            <li>Cart</li>
-            <li>Help</li>
-            <li>Account</li>
+            <ul className="links mobile-links">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/">About</Link>
+              </li>
+              <li>
+                <Link to="/">Timeline</Link>
+              </li>
+              <li>
+                <Link to="/">Our Team</Link>
+              </li>
+              <li>
+                <Link to="/">Projects</Link>
+              </li>
+              <li>
+                <Link to="/">Contact</Link>
+              </li>
+              <li>
+                <Link to="/" className="donate">
+                  <AiOutlineHeart className="heart" />
+                  DONATE
+                </Link>
+              </li>
+            </ul>
           </ul>
         </div>
       ) : null}
