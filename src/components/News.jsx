@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/News.css";
 import img from "../assets/img1.jpg";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const News = () => {
   return (
