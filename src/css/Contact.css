@@ -74,4 +74,8 @@ form button:hover {
   .contact-cont {
     padding: 100px 2%;
   }
+  .contact-cont p {
+    margin: 30px 0px;
+    font-size: 20px;
+  }
 }
