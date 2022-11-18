@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import Header from "../components/Header";
 import About from "../components/About";
 import Bible from "../components/Bible";
@@ -10,7 +9,6 @@ import Footer from "../components/Footer";
 const Home = () => {
   return (
     <div>
-      <Navbar />
       <Header />
       <About />
       <Bible />

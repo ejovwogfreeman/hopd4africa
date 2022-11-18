@@ -18,22 +18,22 @@ const NavbarMobile = ({ open }) => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/">About</Link>
+                <Link to="/about">About</Link>
               </li>
               <li>
-                <Link to="/">Timeline</Link>
+                <Link to="/timeline">Timeline</Link>
               </li>
               <li>
-                <Link to="/">Our Team</Link>
+                <Link to="/team">Our Team</Link>
               </li>
               <li>
-                <Link to="/">Projects</Link>
+                <Link to="/projects">Projects</Link>
               </li>
               <li>
-                <Link to="/">Contact</Link>
+                <Link to="/contact">Contact</Link>
               </li>
               <li>
-                <Link to="/" className="donate">
+                <Link to="/donate" className="donate">
                   <AiOutlineHeart className="heart" />
                   DONATE
                 </Link>
