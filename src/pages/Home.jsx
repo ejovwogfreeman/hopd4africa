@@ -4,7 +4,6 @@ import About from "../components/About";
 import Bible from "../components/Bible";
 import News from "../components/News";
 import Contact from "../components/Contact";
-import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -14,7 +13,6 @@ const Home = () => {
       <Bible />
       <News />
       <Contact />
-      <Footer />
     </div>
   );
 };
