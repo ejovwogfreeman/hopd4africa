@@ -13,6 +13,7 @@ const NavbarMobile = ({ open, handleOpen }) => {
     <div className={hide ? "showall" : null}>
       {hide ? (
         <div className={open ? "show-cont" : "hide"}>
+          <div className="show-close" onClick={() => handleOpen()}></div>
           <div className={open ? "show" : "hide"}>
             <div className="close">
               <AiOutlineCloseSquare onClick={() => handleOpen()} />
