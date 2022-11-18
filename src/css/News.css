@@ -2,7 +2,7 @@
   text-align: center;
   background-color: rgb(31, 31, 71);
   color: whitesmoke;
-  padding: 100px 5%;
+  padding: 50px 5%;
 }
 .news-comp img {
   width: 500px;
@@ -32,6 +32,6 @@
     font-size: 30px;
   }
   .news-comp {
-    padding: 100px 2%;
+    padding: 50px 2%;
   }
 }
