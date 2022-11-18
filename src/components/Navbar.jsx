@@ -21,7 +21,7 @@ const Navbar = () => {
         <div className="top-nav">
           <div className="mail-cont">
             <ImMail className="mail" />
-            hope4africa@gmail.com
+            info@hope4africa.foundation
           </div>
           <div className="icons">
             <a href="https://facebook.com">

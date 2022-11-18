@@ -128,10 +128,7 @@ nav a {
   .top-nav .icons a {
     margin-left: 5px;
   }
-}
-
-@media screen and (max-width: 370px) {
   .top-nav .mail-cont {
-    font-size: 14px;
+    font-size: 12px;
   }
 }
