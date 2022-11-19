@@ -2,10 +2,12 @@ import React from "react";
 import { AiOutlineHeart, AiOutlineMore } from "react-icons/ai";
 import img from "../assets/img1.jpg";
 import { Link } from "react-router-dom";
+import ScrollToTop from "../components/ScrollToTop";
 
 const News = () => {
   return (
     <div className="container">
+      <ScrollToTop />
       <div className="post-bar">
         <p>All Posts</p>
         <Link to="/">Login / Sign Up</Link>

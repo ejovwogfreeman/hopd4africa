@@ -1,10 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ScrollToTop from "../components/ScrollToTop";
 
 const NotFound = () => {
   return (
     <div>
-      Not Found <Link to="/">go back home</Link>
+      <ScrollToTop />
+      <p>
+        Not Found <Link to="/">go back home</Link>
+      </p>
     </div>
   );
 };

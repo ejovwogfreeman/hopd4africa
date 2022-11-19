@@ -4,10 +4,12 @@ import Header2 from "../components/Header2";
 import Contact from "../components/Contact";
 import Bible2 from "../components/Bible2";
 import { Link } from "react-router-dom";
+import ScrollToTop from "../components/ScrollToTop";
 
 const About = () => {
   return (
     <div style={{ textAlign: "justify" }}>
+      <ScrollToTop />
       <Header2 />
       <Bible2 />
       <div className="about-text">

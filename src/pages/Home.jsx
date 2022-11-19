@@ -4,10 +4,12 @@ import About from "../components/About";
 import Bible from "../components/Bible";
 import News from "../components/News";
 import Contact from "../components/Contact";
+import ScrollToTop from "../components/ScrollToTop";
 
 const Home = () => {
   return (
     <div>
+      <ScrollToTop />
       <Header />
       <About />
       <Bible />

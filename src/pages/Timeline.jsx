@@ -8,10 +8,12 @@ import {
   FaInstagramSquare,
   FaLinkedin,
 } from "react-icons/fa";
+import ScrollToTop from "../components/ScrollToTop";
 
 const Timeline = () => {
   return (
     <div>
+      <ScrollToTop />
       <Header3 />
       <div>
         <div>

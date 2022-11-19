@@ -1,10 +1,12 @@
 import React from "react";
 import "../css/General.css";
 import img from "../assets/img1.jpg";
+import ScrollToTop from "../components/ScrollToTop";
 
 const Projects = () => {
   return (
     <div className="container project">
+      <ScrollToTop />
       <div className="top">
         <div className="img">
           <img src={img} alt="" />
