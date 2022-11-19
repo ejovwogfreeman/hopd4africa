@@ -373,6 +373,10 @@
   .follow div h3 {
     margin-bottom: 10px;
   }
+  .timeline-comp .abs {
+    left: 50px;
+    width: 800px;
+  }
 }
 
 @media screen and (max-width: 960px) {
@@ -419,6 +423,23 @@
     font-size: 40px;
     margin-bottom: 20px;
   }
+  .timeline-comp {
+    position: static;
+    padding-top: 0px;
+    background-color: black;
+    color: white;
+  }
+  .timeline-comp .abs {
+    position: static;
+    display: block;
+    width: 100%;
+    background-color: red;
+  }
+
+  .timeline-comp .abs .text {
+    flex: 1;
+    padding: 20px 0px;
+  }
 }
 @media screen and (max-width: 500px) {
   .container {
@@ -432,5 +453,20 @@
   }
   .team-heading p {
     font-size: 18px;
+  }
+  .timeline-comp {
+    padding: 0px 2%;
+  }
+  .timeline-contents .text {
+    flex: 2;
+    border-left: 1px solid white;
+    padding-left: 10px;
+    margin-top: 20px;
+  }
+  .last-bar {
+    display: block;
+  }
+  .last-bar .text {
+    padding: 20px;
   }
 }
