@@ -12,7 +12,12 @@ const Home = () => {
       <About />
       <Bible />
       <News />
-      <Contact />
+      <div id="contact">
+        <Contact
+          text="Reach out with any questions or ideas and let the power of God work
+        through you."
+        />
+      </div>
     </div>
   );
 };

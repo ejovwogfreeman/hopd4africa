@@ -1,15 +1,16 @@
 import React from "react";
 import "../css/Contact.css";
 
-const Contact = () => {
+const Contact = ({ text, text2 }) => {
   return (
     <div className="contact-cont">
       <div className="logo">
-        <h1>Hope4Afica</h1>
+        <h3>Hope4Afica</h3>
       </div>
       <p>
-        Reach out with any questions or ideas and let the power of God work
-        through you.{" "}
+        {text}
+        <br />
+        {text2}
       </p>
       <form action="">
         <div className="row">

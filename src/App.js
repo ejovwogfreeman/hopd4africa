@@ -1,16 +1,16 @@
 import "./App.css";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Timeline from "./pages/Timelins";
+import Timeline from "./pages/Timeline";
 import Team from "./pages/Team";
 import Projects from "./pages/Projects";
-import Contact from "./pages/Contact";
+import ContactPg from "./pages/ContactPg";
+import News from "./pages/News";
 import Donate from "./pages/Donate";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Team from "./pages/Team";
 
 function App() {
   return (
@@ -23,7 +23,8 @@ function App() {
           <Route path="/timeline" element={<Timeline />} />
           <Route path="/team" element={<Team />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<ContactPg />} />
+          <Route path="/blog" element={<News />} />
           <Route path="/donate" element={<Donate />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

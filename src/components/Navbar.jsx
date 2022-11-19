@@ -44,7 +44,9 @@ const Navbar = () => {
         </div>
         <div className="main-nav">
           <div className="logo">
-            <h1>Hope4Africa</h1>
+            <Link to="/">
+              <h1>Hope4Africa</h1>
+            </Link>
           </div>
           <ul className="links">
             <li>
@@ -64,6 +66,9 @@ const Navbar = () => {
             </li>
             <li>
               <Link to="/contact">Contact</Link>
+            </li>
+            <li>
+              <Link to="/blog">News</Link>
             </li>
             <li>
               <Link to="/donate" className="donate">

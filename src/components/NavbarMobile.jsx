@@ -38,6 +38,9 @@ const NavbarMobile = ({ open, handleOpen }) => {
                 <Link to="/contact">Contact</Link>
               </li>
               <li onClick={() => handleOpen()}>
+                <Link to="/blog">News</Link>
+              </li>
+              <li onClick={() => handleOpen()}>
                 <Link to="/donate" className="donate">
                   <AiOutlineHeart className="heart" />
                   DONATE
