@@ -1,10 +1,12 @@
 import React from "react";
 import "../css/General.css";
+import "../css/About.css";
 import Header2 from "../components/Header2";
 import Contact from "../components/Contact";
 import Bible2 from "../components/Bible2";
 import { Link } from "react-router-dom";
 import ScrollToTop from "../components/ScrollToTop";
+import img from "../assets/img1.jpg";
 
 const About = () => {
   return (
@@ -36,11 +38,13 @@ const About = () => {
           <Link to="">DONATE</Link>
         </div>
         <div className="img">
-          <img src="" alt="" />
+          <img src={img} alt="" />
         </div>
       </div>
       <div className="about-text2">
-        <div className="img"></div>
+        <div className="img">
+          <img src={img} alt="" />
+        </div>
         <div className="text">
           <h1>The Great Storms</h1>
           <p>

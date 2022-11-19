@@ -75,6 +75,59 @@
   margin-top: 20px;
 }
 
+.about-text img,
+.about-text2 img {
+  width: 100%;
+  height: 100%;
+}
+
+.about-text {
+  display: flex;
+  background-color: black;
+  color: white;
+  padding: 0px 0px 0px 5%;
+}
+.about-text .text {
+  flex: 1;
+  padding: 20px;
+  padding-left: 0px;
+}
+.about-text .img {
+  flex: 2;
+}
+.about-text2 {
+  display: flex;
+  background-color: black;
+  color: white;
+  padding: 0px 5% 0px 0px;
+}
+.about-text2 .text {
+  flex: 1;
+  padding: 20px;
+  padding-right: 0px;
+}
+.about-text2 .img {
+  flex: 2;
+}
+
+.about-text h1,
+.about-text2 h1 {
+  margin-bottom: 20px;
+}
+
+.about-text .text p,
+.about-text2 .text p {
+  margin-bottom: 20px;
+}
+
+.about-text .text a,
+.about-text2 .text a {
+  border: 1px solid white;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
 @media only screen and (max-width: 960px) {
   .contents {
     display: block;
@@ -93,10 +146,38 @@
     text-align: center;
     padding: 0px;
   }
+  .about-text {
+    display: block;
+    background-color: black;
+    color: white;
+    padding: 0px 5%;
+  }
+  .about-text2 {
+    display: block;
+    background-color: black;
+    color: white;
+    padding: 0px 5%;
+  }
+
+  .about-text h1,
+  .about-text2 h1 {
+    margin-bottom: 10px;
+  }
+
+  .about-text .text,
+  .about-text2 .text {
+    padding: 20px 0px;
+  }
 }
 
 @media only screen and (max-width: 500px) {
   .about {
     padding: 50px 2%;
+  }
+  .about-text {
+    padding: 0px 2%;
+  }
+  .about-text2 {
+    padding: 0px 2%;
   }
 }

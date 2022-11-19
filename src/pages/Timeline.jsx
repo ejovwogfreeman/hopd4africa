@@ -9,30 +9,33 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import ScrollToTop from "../components/ScrollToTop";
+import img from "../assets/img1.jpg";
 
 const Timeline = () => {
   return (
     <div>
       <ScrollToTop />
       <Header3 />
-      <div>
-        <div>
-          <img src="" alt="" />
+      <div className="timeline-comp">
+        <div className="abs">
+          <div className="img">
+            <img src={img} alt="" />
+          </div>
+          <div className="text">
+            <h1>HOPE4AFRICA</h1>
+            <p>phone:</p>
+            <p>234-803-744-8004</p>
+            <p>Email:</p>
+            <p>info@hope4africa.foundation</p>
+            <p>Address</p>
+            <p>
+              134B. Calabar IKOM HIGH WAY, OPP AKAMKPA CHIEF MAGISTRATE COURT,
+              AKAMKPA LOCAL GOVERNMENT AREA, CROSS RIVER STATE, NIGERIA.
+            </p>
+            <Link to="">VIEW TIMELINE</Link>
+          </div>
         </div>
-        <div>
-          <h1>HOPE4AFRICA</h1>
-          <p>phone:</p>
-          <p>234-803-744-8004</p>
-          <p>Email:</p>
-          <p>info@hope4africa.foundation</p>
-          <p>Address</p>
-          <p>
-            134B. Calabar IKOM HIGH WAY, OPP AKAMKPA CHIEF MAGISTRATE COURT,
-            AKAMKPA LOCAL GOVERNMENT AREA, CROSS RIVER STATE, NIGERIA.
-          </p>
-          <Link to="">VIEW TIMELINE</Link>
-        </div>
-        <div>
+        <div className="why">
           <h1>WHY HOPE4AFRICA?</h1>
           <p>
             In West Africa, individuals and entire communities are struggling to
@@ -40,14 +43,14 @@ const Timeline = () => {
             through God's grace became a reality.
           </p>
         </div>
-        <div>
+        <div className="timeline-contents">
           <h1>Timeline</h1>
-          <div>
-            <div>
-              <img src="" alt="" />
+          <div className="contents">
+            <div className="img">
+              <img src={img} alt="" />
               <p>May/2021… “Hope4Africa”</p>
             </div>
-            <div>
+            <div className="text">
               <p>
                 After several discussions about the mechanics and logistics
                 needed to help the children of the “House of Grace” monthly, a
@@ -56,12 +59,12 @@ const Timeline = () => {
               </p>
             </div>
           </div>
-          <div>
-            <div>
-              <img src="" alt="" />
+          <div className="contents">
+            <div className="img">
+              <img src={img} alt="" />
               <p>May/2021… The 1st “Food4Orphans”</p>
             </div>
-            <div>
+            <div className="text">
               <p>
                 After some discussion with the “Hope4Africa” team it was decided
                 to not only provide a “bag of rice” to Grace’s “Food4Orphans”
@@ -81,15 +84,12 @@ const Timeline = () => {
               </p>
             </div>
           </div>
-          <div>
-            <div>
-              <img src="" alt="" />
-              <p>
-                May/2021… “Hope4Africa” May/2021… The 1st “Food4Orphans”
-                May/2021 Rebuilding the “House of Hope”
-              </p>
+          <div className="contents">
+            <div className="img">
+              <img src={img} alt="" />
+              <p>May/2021 Rebuild className="text"ing the “House of Hope”</p>
             </div>
-            <div>
+            <div className="text">
               <p>
                 The rebuilding process was started for the “House of Hope”
                 beginning with the demolition of the old church building and the
@@ -100,12 +100,12 @@ const Timeline = () => {
               </p>
             </div>
           </div>
-          <div>
-            <div>
-              <img src="" alt="" />
+          <div className="contents">
+            <div className="img">
+              <img src={img} alt="" />
               <p>Jun/2021 The 1st “Celebrate4Hope”</p>
             </div>
-            <div>
+            <div className="text">
               <p>
                 Because of the large attendance and success experienced in May,
                 the “Hope4Africa” team decided to challenge themselves to
@@ -129,12 +129,12 @@ const Timeline = () => {
               </p>
             </div>
           </div>
-          <div>
-            <div>
-              <img src="" alt="" />
+          <div className="contents">
+            <div className="img">
+              <img src={img} alt="" />
               <p>Jun/2021 The 1st “Celebrate4Hope”</p>
             </div>
-            <div>
+            <div className="text">
               <p>
                 More bricks… At the same time, the building was re-engineered,
                 and the initial foundational layout measurements were made.
@@ -143,26 +143,28 @@ const Timeline = () => {
           </div>
         </div>
       </div>
-      <div>
-        <div>
-          <p>Let's Get Social</p>
-          <div className="icons">
-            <a href="https://facebook.com">
-              <FaFacebookSquare />
-            </a>
-            <a href="https://twitter.com">
-              <FaTwitterSquare />
-            </a>
-            <a href="https://instagram.com">
-              <FaInstagramSquare />
-            </a>
-            <a href="https://linkedin.com">
-              <FaLinkedin />
-            </a>
-          </div>
+      <div className="last-bar">
+        <div className="text">
+          <span>
+            <p>Let's Get Social</p>
+            <div className="icons">
+              <a href="https://facebook.com">
+                <FaFacebookSquare />
+              </a>
+              <a href="https://twitter.com">
+                <FaTwitterSquare />
+              </a>
+              <a href="https://instagram.com">
+                <FaInstagramSquare />
+              </a>
+              <a href="https://linkedin.com">
+                <FaLinkedin />
+              </a>
+            </div>
+          </span>
         </div>
-        <div>
-          <img src="" alt="" />
+        <div className="img">
+          <img src={img} alt="" />
         </div>
       </div>
     </div>
