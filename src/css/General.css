@@ -457,7 +457,7 @@
     padding: 0px 2%;
   }
   .timeline-contents .text {
-    flex: 2;
+    flex: 1;
     border-left: 1px solid white;
     padding-left: 10px;
     margin-top: 20px;
@@ -467,5 +467,17 @@
   }
   .last-bar .text {
     padding: 20px;
+  }
+  .timeline-contents .contents .img {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  .timeline-contents .contents .img img {
+    flex: 1;
+  }
+  .timeline-contents .contents .img p {
+    flex: 1;
+    margin-left: 5px;
   }
 }
