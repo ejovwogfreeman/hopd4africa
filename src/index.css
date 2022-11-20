@@ -9,6 +9,14 @@ body {
   background-color: black;
 }
 
+/* form input,
+form text area {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+} */
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
