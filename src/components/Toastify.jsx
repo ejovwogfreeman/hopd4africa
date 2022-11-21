@@ -10,9 +10,10 @@ const Toastify = () => {
     toast[ToastifyState.variant](ToastifyState.message);
   };
 
-  React.useEffect(() => {
-    if (ToastifyState.open) return showToast();
-  }, [ToastifyState]);
+  setToastifyState(ToastifyState);
+
+  if (ToastifyState.open) return showToast();
+
   return (
     <div>
       <ToastContainer />

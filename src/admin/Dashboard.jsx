@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../css/General.css";
 import "../css/Admin.css";
 import { UserContext } from "../context/UserContext";
@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const [UserState, setUserState] = React.useContext(UserContext);
+
+  useEffect(() => {
+    setUserState(UserState);
+  });
 
   let timeDay = new Date().getHours();
   let timeGreet = null;
