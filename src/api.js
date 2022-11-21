@@ -34,6 +34,42 @@ export const loginUser = async (user) => {
   return login;
 };
 
+//////////////////////////////////////////
+/////////create blog post//////////////////
+//////////////////////////////////////////
+export const postBlog = async (token, blog) => {
+  let user;
+  user = JSON.parse(localStorage.getItem("user"));
+  token = user.authorization.token;
+  const res = await fetch("http://localhost:8000/api/blog", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      Authorization: "Bearer " + token,
+    },
+    body: blog,
+  });
+  const blogPost = await res.json();
+  return blogPost;
+};
+
+////////////////////////////
+///////Get single user///////
+////////////////////////////
+
+// export const getUser = async (token) => {
+//   const res = await fetch("https://backend-tytc.onrender.com/api/users/user", {
+//     method: "GET",
+//     headers: {
+//       "Content-Type": "application/json",
+//       "auth-token": token,
+//     },
+//   });
+//   const user = await res.json();
+//   return user;
+// };
+
 // /////////////////////////////
 // ///////Change Password///////
 // /////////////////////////////

@@ -20,15 +20,22 @@ form div {
   margin-bottom: 20px;
 }
 
-form input {
+form input,
+form textarea {
   border: 1px solid black;
   color: black;
   border-radius: 5px;
+  width: 100%;
 }
 
 form button {
   border: 1px solid black;
   border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 form button:hover {
   border: 1px solid black;
@@ -50,4 +57,10 @@ form button:hover {
   color: rgb(31, 31, 71);
   border: 1px solid rgb(31, 31, 71);
   border-radius: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  form {
+    width: 100%;
+  }
 }

@@ -21,39 +21,48 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ToastifyComponent from "./context/ToastifyContext";
 import UserComponent from "./context/UserContext";
 import Toastify from "./components/Toastify";
+import BlogComponent from "./context/BlogContext";
 
 function App() {
   return (
     <UserComponent>
-      <ToastifyComponent>
-        <div style={{ position: "fixed", zIndex: "1000000" }}>
-          <Toastify />
-        </div>
-        <Router>
-          <div className="App">
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/timeline" element={<Timeline />} />
-              <Route path="/team" element={<Team />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/contact" element={<ContactPg />} />
-              <Route path="/blog" element={<News />} />
-              <Route path="/donate" element={<Donate />} />
-              <Route path="/admin_signup" element={<Signup />} />
-              <Route path="/admin_signin" element={<Signin />} />
-              <Route path="/admin_dashboard" element={<Dashboard />} />
-              <Route path="/admin_create_blog" element={<CreateBlog />} />
-              <Route path="/admin_update_blog" element={<UpdateBlog />} />
-              <Route path="/admin_create_project" element={<CreateProject />} />
-              <Route path="/admin_update_project" element={<UpdateProject />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+      <BlogComponent>
+        <ToastifyComponent>
+          <div style={{ position: "fixed", zIndex: "1000000" }}>
+            <Toastify />
           </div>
-          <Footer />
-        </Router>
-      </ToastifyComponent>
+          <Router>
+            <div className="App">
+              <Navbar />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/timeline" element={<Timeline />} />
+                <Route path="/team" element={<Team />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/contact" element={<ContactPg />} />
+                <Route path="/blog" element={<News />} />
+                <Route path="/donate" element={<Donate />} />
+                <Route path="/admin_signup" element={<Signup />} />
+                <Route path="/admin_signin" element={<Signin />} />
+                <Route path="/admin_dashboard" element={<Dashboard />} />
+                <Route path="/admin_create_blog" element={<CreateBlog />} />
+                <Route path="/admin_update_blog" element={<UpdateBlog />} />
+                <Route
+                  path="/admin_create_project"
+                  element={<CreateProject />}
+                />
+                <Route
+                  path="/admin_update_project"
+                  element={<UpdateProject />}
+                />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </div>
+            <Footer />
+          </Router>
+        </ToastifyComponent>
+      </BlogComponent>
     </UserComponent>
   );
 }

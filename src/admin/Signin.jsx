@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../css/General.css";
 import "../css/Admin.css";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastifyContext } from "../context/ToastifyContext";
 import { UserContext } from "../context/UserContext";
 import { loginUser } from "../api";
@@ -30,14 +30,14 @@ const Signin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const register = await loginUser(user);
+    const login = await loginUser(user);
 
-    if (register.success) {
-      localStorage.setItem("user", JSON.stringify(register));
-      setUserState(register);
+    if (login.success) {
+      localStorage.setItem("user", JSON.stringify(login));
+      setUserState(login);
       setToastifyState({
         ...ToastifyState,
-        message: register.message,
+        message: login.message,
         variant: "success",
         open: true,
       });
@@ -46,11 +46,11 @@ const Signin = () => {
     } else {
       setToastifyState({
         ...ToastifyState,
-        message: register.message,
+        message: login.message,
         variant: "error",
         open: true,
       });
-      console.log(register.message);
+      console.log(login.message);
       setLoading(false);
     }
   };
