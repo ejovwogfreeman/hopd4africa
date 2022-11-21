@@ -3,8 +3,10 @@ import "../css/Navbar.css";
 import { Link } from "react-router-dom";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineCloseSquare } from "react-icons/ai";
+import { UserContext } from "../context/UserContext";
 
 const NavbarMobile = ({ open, handleOpen }) => {
+  const [UserState, setUserState] = React.useContext(UserContext);
   const [hide, setHide] = useState(false);
   setTimeout(() => {
     setHide(!false);
@@ -43,6 +45,11 @@ const NavbarMobile = ({ open, handleOpen }) => {
               <li onClick={() => handleOpen()}>
                 <Link to="/blog">News</Link>
               </li>
+              {UserContext ? (
+                <li onClick={() => handleOpen()}>
+                  <Link to="/admin_dashboard">Dashboard</Link>
+                </li>
+              ) : null}
               <li onClick={() => handleOpen()}>
                 <Link to="/donate" className="donate">
                   <AiOutlineHeart className="heart" />

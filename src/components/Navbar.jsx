@@ -11,9 +11,11 @@ import {
 } from "react-icons/fa";
 import { AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [UserState, setUserState] = React.useContext(UserContext);
 
   const handleOpen = () => {
     setOpen(false);
@@ -70,6 +72,11 @@ const Navbar = () => {
             <li>
               <Link to="/blog">News</Link>
             </li>
+            {UserState ? (
+              <li>
+                <Link to="/admin_dashboard">Dashboard</Link>
+              </li>
+            ) : null}
             <li>
               <Link to="/donate" className="donate">
                 <AiOutlineHeart className="heart" />
