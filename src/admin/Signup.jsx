@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../css/General.css";
 import "../css/Admin.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { ToastifyContext } from "../context/ToastifyContext";
 import { UserContext } from "../context/UserContext";
 import { registerUser } from "../api";
@@ -25,7 +25,6 @@ const Signup = () => {
 
   const [ToastifyState, setToastifyState] = React.useContext(ToastifyContext);
   const [UserState, setUserState] = React.useContext(UserContext);
-  console.log(UserState);
 
   const navigate = useNavigate();
 

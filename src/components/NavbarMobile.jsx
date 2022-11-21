@@ -45,7 +45,7 @@ const NavbarMobile = ({ open, handleOpen }) => {
               <li onClick={() => handleOpen()}>
                 <Link to="/blog">News</Link>
               </li>
-              {UserContext ? (
+              {UserState ? (
                 <li onClick={() => handleOpen()}>
                   <Link to="/admin_dashboard">Dashboard</Link>
                 </li>
