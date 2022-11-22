@@ -3,7 +3,7 @@
 ///////////////////
 
 export const registerUser = async (user) => {
-  const res = await fetch("http://localhost:8000/api/auth/register", {
+  const res = await fetch("http://backend.hope4africa.alresia.com/api/auth/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export const registerUser = async (user) => {
 ///////////////////
 
 export const loginUser = async (user) => {
-  const res = await fetch("http://localhost:8000/api/auth/login", {
+  const res = await fetch("http://backend.hope4africa.alresia.com/api/auth/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -41,7 +41,7 @@ export const postBlog = async (token, blog) => {
   let user;
   user = JSON.parse(localStorage.getItem("user"));
   token = user.authorization.token;
-  const res = await fetch("http://localhost:8000/api/blog", {
+  const res = await fetch("http://backend.hope4africa.alresia.com/api/blog", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

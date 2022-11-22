@@ -6,6 +6,7 @@ import { UserContext } from "../context/UserContext";
 import { ToastifyContext } from "../context/ToastifyContext";
 import { postBlog } from "../api";
 import { BlogContext } from "../context/BlogContext";
+import * as Blog from '../endpoints/Blog';
 
 const CreateBlog = () => {
   const [ToastifyState, setToastifyState] = React.useContext(ToastifyContext);
@@ -18,7 +19,7 @@ const CreateBlog = () => {
     // method: params.method ? params.method : "Bitcoin",
     title: "",
     content: "",
-    file: [],
+    thumbnail: '',
   });
 
   const handleSubmit = async (e) => {
@@ -35,24 +36,44 @@ const CreateBlog = () => {
     // formData.append("title", blogPost.title);
     // formData.append("content", blogPost.content);
 
-    let blog = await postBlog(token, blogPost);
+    // let blog = await postBlog(token, blogPost);
 
+    // try {
+    //   // const blog = await postBlog(blogPost);
+    //   setBlogState(blog);
+    //   setToastifyState({
+    //     ...ToastifyState,
+    //     message: blog.message,
+    //     variant: "success",
+    //     open: true,
+    //   });
+    //   navigate("/admin_dashboard");
+    //   setLoading(false);
+    // } catch (err) {
+    //   console.log(err);
+    // }
+
+    // console.log(BlogState);
+    
     try {
-      // const blog = await postBlog(blogPost);
-      setBlogState(blog);
-      setToastifyState({
-        ...ToastifyState,
-        message: blog.message,
-        variant: "success",
-        open: true,
-      });
-      navigate("/admin_dashboard");
-      setLoading(false);
-    } catch (err) {
-      console.log(err);
-    }
+      const res = await Blog.store(blogPost);
+      console.log(res);
+      if(res.success === true){
+        setBlogState(res.data);
+        setToastifyState({
+          ...ToastifyState,
+          message: res.message,
+          variant: "success",
+          open: true,
+        });
+        navigate("/admin_dashboard");
+        setLoading(false);
+      }
+      
+    } catch (error) {
+      console.log(error);
 
-    console.log(BlogState);
+    }
 
     // if (blog.success) {
     //   setBlogState(blog);
@@ -151,7 +172,7 @@ const CreateBlog = () => {
               onChange={(e) =>
                 setBlogPost({
                   ...blogPost,
-                  file: e.target.files,
+                  thumbnail: e.target.files[0],
                 })
               }
             />
