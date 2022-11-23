@@ -71,10 +71,34 @@ const BlogDetails = () => {
           <div>
             <h3>{project.title}</h3>
             <p>{project.description}</p>
+            <hr />
             {user ? (
-              <p>
-                <Link to={`/edit_project/${project.id}`}>EDIT</Link>
-                <button onClick={handleDelete}>DELETE</button>
+              <p style={{ display: "flex", aignItems: "center" }}>
+                <Link
+                  to={`/edit_project/${project.id}`}
+                  style={{
+                    border: "1px solid white",
+                    padding: "7px",
+                    color: "white",
+                    borderRadius: "5px",
+                    marginRight: "10px",
+                  }}
+                >
+                  EDIT
+                </Link>
+                <button
+                  onClick={handleDelete}
+                  style={{
+                    border: "1px solid white",
+                    padding: "7px",
+                    color: "white",
+                    borderRadius: "5px",
+                    background: "transparent",
+                    cursor: "pointer",
+                  }}
+                >
+                  DELETE
+                </button>
               </p>
             ) : null}
           </div>

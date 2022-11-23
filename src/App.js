@@ -25,12 +25,10 @@ import BlogDetails from "./pages/BlogDetails";
 import EditBlog from "./admin/EditBlog";
 import ProjectDetails from "./pages/ProjectDetails";
 import EditProject from "./admin/EditProject";
-// import BlogComponent from "./context/BlogContext";
 
 function App() {
   return (
     <UserComponent>
-      {/* <BlogComponent> */}
       <ToastifyComponent>
         <div style={{ position: "fixed", zIndex: "1000000" }}>
           <Toastify />
@@ -64,7 +62,6 @@ function App() {
           <Footer />
         </Router>
       </ToastifyComponent>
-      {/* </BlogComponent> */}
     </UserComponent>
   );
 }

@@ -92,7 +92,17 @@ const News = () => {
               <hr />
               <div className="bottom">
                 <span>
-                  <Link to={`/blog/${x.id}`}>Read more</Link>
+                  <Link
+                    to={`/blog/${x.id}`}
+                    style={{
+                      border: "1px solid black",
+                      padding: "10px",
+                      color: "black",
+                      borderRadius: "5px",
+                    }}
+                  >
+                    Read more
+                  </Link>
                 </span>
               </div>
             </div>

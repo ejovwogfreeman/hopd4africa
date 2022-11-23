@@ -166,15 +166,26 @@ const Projects = () => {
         </div>
         {project.map((x) => {
           return (
-            <div className="cont" key={x.id}>
+            <div className="cont" key={x.id} style={{ marginBottom: "30px" }}>
               <div>
                 <img src={x.thumbnail} alt="" />
               </div>
               <div>
                 <h3>{x.title}</h3>
                 <p>{x.description}</p>
+                <hr />
                 <p>
-                  <Link to={`/projects/${x.id}`}>Read more</Link>
+                  <Link
+                    to={`/projects/${x.id}`}
+                    style={{
+                      border: "1px solid white",
+                      padding: "10px",
+                      color: "white",
+                      borderRadius: "5px",
+                    }}
+                  >
+                    Read more
+                  </Link>
                 </p>
               </div>
             </div>
