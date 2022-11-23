@@ -61,7 +61,7 @@ const EditProject = () => {
       });
     setToastifyState({
       ...ToastifyState,
-      message: "Project added successfully",
+      message: "Project Updated successfully",
       variant: "success",
       open: true,
     });
@@ -97,8 +97,9 @@ const EditProject = () => {
             <label>Thumbnail</label>
             <input type="file" name="file" onChange={handleImage} />
           </div>
-          <button disabled={loading}>{loading ? "LOADING..." : "EDIT"}</button>
-          {/* <button>submit</button> */}
+          <button disabled={loading}>
+            {loading ? "LOADING..." : "UPDATE"}
+          </button>
         </form>
       </div>
     </div>

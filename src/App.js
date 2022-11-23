@@ -14,9 +14,7 @@ import Signup from "./admin/Signup";
 import Signin from "./admin/Signin";
 import Dashboard from "./admin/Dashboard";
 import CreateBlog from "./admin/CreateBlog";
-import UpdateBlog from "./admin/UpdateBlog";
 import CreateProject from "./admin/CreateProject";
-import UpdateProject from "./admin/UpdateProject";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ToastifyComponent from "./context/ToastifyContext";
 import UserComponent from "./context/UserContext";
@@ -53,9 +51,7 @@ function App() {
               <Route path="/admin_signin" element={<Signin />} />
               <Route path="/admin_dashboard" element={<Dashboard />} />
               <Route path="/admin_create_blog" element={<CreateBlog />} />
-              <Route path="/admin_update_blog" element={<UpdateBlog />} />
               <Route path="/admin_create_project" element={<CreateProject />} />
-              <Route path="/admin_update_project" element={<UpdateProject />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>

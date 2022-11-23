@@ -23,7 +23,7 @@ const EditBlog = () => {
       setBlog(data.data);
     };
     getData();
-  }, []);
+  }, [params.id]);
   console.log(blog.title);
   const [ToastifyState, setToastifyState] = React.useContext(ToastifyContext);
   const [loading, setLoading] = useState(false);
@@ -49,7 +49,7 @@ const EditBlog = () => {
     let id = blog.id;
     console.log(id);
     axios
-      .put(`http://localhost:8000/api/blog/${id}`, formData, {
+      .post(`http://localhost:8000/api/blog/${id}`, formData, {
         headers: {
           Accept: "application/json",
           Authorization: `Bearer ${token}`,
@@ -97,8 +97,9 @@ const EditBlog = () => {
             <label>Thumbnail</label>
             <input type="file" name="file" onChange={handleImage} />
           </div>
-          <button disabled={loading}>{loading ? "LOADING..." : "EDIT"}</button>
-          {/* <button>submit</button> */}
+          <button disabled={loading}>
+            {loading ? "LOADING..." : "UPDATE"}
+          </button>
         </form>
       </div>
     </div>
