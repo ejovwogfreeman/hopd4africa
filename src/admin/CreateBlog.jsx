@@ -51,15 +51,25 @@ const CreateBlog = () => {
       })
       .then((res) => {
         console.log(res);
+        setToastifyState({
+          ...ToastifyState,
+          message: "Blog added successfully",
+          variant: "success",
+          open: true,
+        });
+        navigate("/admin_dashboard");
+        setLoading(false);
+      })
+      .catch((err) => {
+        setLoading(false);
+        setToastifyState({
+          ...ToastifyState,
+          message: "Please fill all Field",
+          variant: "error",
+          open: true,
+        });
+        setLoading(false);
       });
-    setToastifyState({
-      ...ToastifyState,
-      message: "Blog added successfully",
-      variant: "success",
-      open: true,
-    });
-    navigate("/admin_dashboard");
-    setLoading(false);
   };
   return (
     <div>
@@ -72,7 +82,6 @@ const CreateBlog = () => {
               type="text"
               placeholder="Enter Blog Title"
               value={title}
-              required
               onChange={(e) => setTitle(e.target.value)}
             />
           </div>
@@ -82,7 +91,6 @@ const CreateBlog = () => {
               type="text"
               placeholder="Enter Blog Content"
               value={content}
-              required
               onChange={(e) => setContent(e.target.value)}
             />
           </div>
@@ -91,7 +99,6 @@ const CreateBlog = () => {
             <input type="file" name="file" onChange={handleImage} />
           </div>
           <button disabled={loading}>{loading ? "LOADING..." : "POST"}</button>
-          {/* <button>submit</button> */}
         </form>
       </div>
     </div>

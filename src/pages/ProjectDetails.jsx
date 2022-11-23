@@ -20,19 +20,16 @@ const BlogDetails = () => {
   useEffect(() => {
     const getData = async (id) => {
       id = Number(params.id);
-      console.log(id);
       const res = await fetch(`http://localhost:8000/api/project/${id}`);
       const data = await res.json();
       setProject(data.data);
     };
     getData();
   }, []);
-  console.log(project);
 
   const handleDelete = () => {
     const token = getToken();
     let id = project.id;
-    console.log(id);
     axios
       .delete(`http://localhost:8000/api/project/${id}`, {
         headers: {

@@ -17,27 +17,24 @@ const EditBlog = () => {
   useEffect(() => {
     const getData = async (id) => {
       id = Number(params.id);
-      console.log(id);
       const res = await fetch(`http://localhost:8000/api/blog/${id}`);
       const data = await res.json();
       setBlog(data.data);
     };
     getData();
   }, [params.id]);
-  console.log(blog.title);
+
   const [ToastifyState, setToastifyState] = React.useContext(ToastifyContext);
   const [loading, setLoading] = useState(false);
 
   const [title, setTitle] = useState(blog.title);
-  const [content, setContent] = useState(blog.content);
-  const [image, setImage] = useState(blog.thumbail);
+  const [content, setContent] = useState(blog.title);
+  const [image, setImage] = useState(blog.title);
 
-  console.log(title);
   const handleImage = (e) => {
     setImage(e.target.files[0]);
   };
-  //   let id = blog.id;
-  //   console.log(id);
+
   const handleSubmit = (e) => {
     setLoading(true);
     e.preventDefault();
@@ -47,7 +44,6 @@ const EditBlog = () => {
     formData.append("thumbnail", image);
     const token = getToken();
     let id = blog.id;
-    console.log(id);
     axios
       .post(`http://localhost:8000/api/blog/${id}`, formData, {
         headers: {
@@ -57,15 +53,25 @@ const EditBlog = () => {
       })
       .then((res) => {
         console.log(res);
+        setToastifyState({
+          ...ToastifyState,
+          message: "Blog Updated successfully",
+          variant: "success",
+          open: true,
+        });
+        navigate("/admin_dashboard");
+        setLoading(false);
+      })
+      .catch((err) => {
+        setLoading(false);
+        setToastifyState({
+          ...ToastifyState,
+          message: "Please fill all Field",
+          variant: "error",
+          open: true,
+        });
+        setLoading(false);
       });
-    setToastifyState({
-      ...ToastifyState,
-      message: "Blog Updated successfully",
-      variant: "success",
-      open: true,
-    });
-    navigate("/admin_dashboard");
-    setLoading(false);
   };
 
   return (
@@ -79,7 +85,6 @@ const EditBlog = () => {
               type="text"
               placeholder="Enter Blog Title"
               value={title}
-              required
               onChange={(e) => setTitle(e.target.value)}
             />
           </div>
@@ -89,7 +94,6 @@ const EditBlog = () => {
               type="text"
               placeholder="Enter Blog Content"
               value={content}
-              required
               onChange={(e) => setContent(e.target.value)}
             />
           </div>

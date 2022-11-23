@@ -11,14 +11,12 @@ import { useNavigate, useParams } from "react-router-dom";
 const EditProject = () => {
   const navigate = useNavigate();
   const params = useParams();
-  //   const [ToastifyState, setToastifyState] = React.useContext(ToastifyContext);
   const [load, setLoad] = useState(true);
 
   const [project, setProject] = useState({});
   useEffect(() => {
     const getData = async (id) => {
       id = Number(params.id);
-      console.log(id);
       const res = await fetch(`http://localhost:8000/api/project/${id}`);
       const data = await res.json();
       setProject(data.data);
@@ -27,9 +25,6 @@ const EditProject = () => {
     getData();
   }, []);
 
-  //   console.log(project.title);
-  let x = project.title && project.title;
-  console.log(x);
   const [ToastifyState, setToastifyState] = React.useContext(ToastifyContext);
   const [loading, setLoading] = useState(false);
 
@@ -48,9 +43,9 @@ const EditProject = () => {
     formData.append("description", content);
     formData.append("thumbnail", image);
     const token = getToken();
-    console.log(image);
+    let id = project.id;
     axios
-      .post("http://localhost:8000/api/project", formData, {
+      .post(`http://localhost:8000/api/project/${id}`, formData, {
         headers: {
           Accept: "application/json",
           Authorization: `Bearer ${token}`,
@@ -58,16 +53,27 @@ const EditProject = () => {
       })
       .then((res) => {
         console.log(res);
+        setToastifyState({
+          ...ToastifyState,
+          message: "Project Updated successfully",
+          variant: "success",
+          open: true,
+        });
+        navigate("/admin_dashboard");
+        setLoading(false);
+      })
+      .catch((err) => {
+        setLoading(false);
+        setToastifyState({
+          ...ToastifyState,
+          message: "Please fill all Field",
+          variant: "error",
+          open: true,
+        });
+        setLoading(false);
       });
-    setToastifyState({
-      ...ToastifyState,
-      message: "Project Updated successfully",
-      variant: "success",
-      open: true,
-    });
-    navigate("/admin_dashboard");
-    setLoading(false);
   };
+
   return (
     <div>
       <div className="container">
@@ -79,7 +85,6 @@ const EditProject = () => {
               type="text"
               placeholder="Enter Project Title"
               value={title}
-              required
               onChange={(e) => setTitle(e.target.value)}
             />
           </div>
@@ -89,7 +94,6 @@ const EditProject = () => {
               type="text"
               placeholder="Enter Project description"
               value={content}
-              required
               onChange={(e) => setContent(e.target.value)}
             />
           </div>

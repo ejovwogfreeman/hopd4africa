@@ -51,15 +51,25 @@ const CreateProject = () => {
       })
       .then((res) => {
         console.log(res);
+        setToastifyState({
+          ...ToastifyState,
+          message: "Project added successfully",
+          variant: "success",
+          open: true,
+        });
+        navigate("/admin_dashboard");
+        setLoading(false);
+      })
+      .catch((err) => {
+        setLoading(false);
+        setToastifyState({
+          ...ToastifyState,
+          message: "Please fill all Field",
+          variant: "error",
+          open: true,
+        });
+        setLoading(false);
       });
-    setToastifyState({
-      ...ToastifyState,
-      message: "Project added successfully",
-      variant: "success",
-      open: true,
-    });
-    navigate("/admin_dashboard");
-    setLoading(false);
   };
   return (
     <div>
@@ -72,7 +82,6 @@ const CreateProject = () => {
               type="text"
               placeholder="Enter Project Title"
               value={title}
-              required
               onChange={(e) => setTitle(e.target.value)}
             />
           </div>
@@ -82,7 +91,6 @@ const CreateProject = () => {
               type="text"
               placeholder="Enter Project description"
               value={content}
-              required
               onChange={(e) => setContent(e.target.value)}
             />
           </div>
@@ -91,7 +99,6 @@ const CreateProject = () => {
             <input type="file" name="file" onChange={handleImage} />
           </div>
           <button disabled={loading}>{loading ? "LOADING..." : "POST"}</button>
-          {/* <button>submit</button> */}
         </form>
       </div>
     </div>
