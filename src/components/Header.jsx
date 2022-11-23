@@ -16,7 +16,7 @@ const Header = () => {
             Through faith, all things are possible.....
           </p>
           <span>
-            <Link to="" className="donate">
+            <Link to="/donate" className="donate">
               <AiOutlineHeart className="heart" />
               DONATE
             </Link>

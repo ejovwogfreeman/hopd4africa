@@ -1,42 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../css/General.css";
 import "../css/Admin.css";
 import { UserContext } from "../context/UserContext";
-import { ToastifyContext } from "../context/ToastifyContext";
+// import { ToastifyContext } from "../context/ToastifyContext";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { getUser } from "../api";
+import { getToken } from "../api";
+// import { getUser } from "../api";
+const token = getToken();
 
 const Dashboard = () => {
-  const [UserState, setUserState] = React.useContext(UserContext);
-  const [loading, setLoading] = useState(false);
-  const [ToastifyState, setToastifyState] = React.useContext(ToastifyContext);
-  const navigate = useNavigate();
-  const location = useLocation();
+  const [UserState, setUserState] = useContext(UserContext);
 
-  // useEffect(async () => {
-  //   setLoading(true);
-  //   let user = await getUser(UserState.token);
+  // const navigate = useNavigate();
+  let user;
+  if (UserState) {
+    user = UserState.data;
+  } else {
+    user = null;
+  }
 
-  //   if (user.error) {
-  //     setLoading(false);
-  //     setToastifyState({
-  //       ...ToastifyState,
-  //       message: user.message,
-  //       variant: "error",
-  //       open: true,
-  //     });
-  //     return navigate("/login");
+  // useEffect(() => {
+  //   if (user === undefined) {
+  //     navigate("/admin_signin");
   //   }
-  //   localStorage.setItem("user", JSON.stringify(user));
-  //   setUserState(user);
-
-  //   setLoading(false);
-  //   location.state = null;
-
-  //   if (!user.username) {
-  //     return navigate("/admin_signin");
-  //   }
-  // }, [location.state]);
+  // });
 
   let timeDay = new Date().getHours();
   let timeGreet = null;
@@ -53,7 +40,13 @@ const Dashboard = () => {
   return (
     <div className="container">
       <div className="top-bar">
-        <div>{UserState ? <>Hello {timeGreet}.</> : null}</div>
+        <div>
+          {token ? (
+            <>
+              Hello {timeGreet}, {user ? user.name : null}
+            </>
+          ) : null}
+        </div>
         <div className="links">
           <Link to="/admin_create_blog">Add post</Link>
           <Link to="/admin_create_project">Add project</Link>

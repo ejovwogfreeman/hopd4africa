@@ -3,37 +3,41 @@ import "../css/General.css";
 import "../css/Admin.css";
 import axios from "axios";
 import { getToken } from "../api";
+import { useParams } from "react-router-dom";
 
-import { UserContext } from "../context/UserContext";
+// import { UserContext } from "../context/UserContext";
 import { ToastifyContext } from "../context/ToastifyContext";
 import { useNavigate } from "react-router-dom";
 
-const CreateBlog = () => {
+const EditBlog = () => {
   const navigate = useNavigate();
-  const [UserState, setUserState] = React.useState(UserContext);
-  // let user;
-  // if (UserState) {
-  //   user = UserState.data;
-  // } else {
-  //   user = null;
-  // }
+  const params = useParams();
 
-  // useEffect(() => {
-  //   if (user === undefined) {
-  //     navigate("/admin_signin");
-  //   }
-  // });
-
+  const [blog, setBlog] = useState({});
+  useEffect(() => {
+    const getData = async (id) => {
+      id = Number(params.id);
+      console.log(id);
+      const res = await fetch(`http://localhost:8000/api/blog/${id}`);
+      const data = await res.json();
+      setBlog(data.data);
+    };
+    getData();
+  }, []);
+  console.log(blog.title);
   const [ToastifyState, setToastifyState] = React.useContext(ToastifyContext);
   const [loading, setLoading] = useState(false);
 
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const [image, setImage] = useState("");
+  const [title, setTitle] = useState(blog.title);
+  const [content, setContent] = useState(blog.content);
+  const [image, setImage] = useState(blog.thumbail);
+
+  console.log(title);
   const handleImage = (e) => {
     setImage(e.target.files[0]);
   };
-
+  //   let id = blog.id;
+  //   console.log(id);
   const handleSubmit = (e) => {
     setLoading(true);
     e.preventDefault();
@@ -42,8 +46,10 @@ const CreateBlog = () => {
     formData.append("content", content);
     formData.append("thumbnail", image);
     const token = getToken();
+    let id = blog.id;
+    console.log(id);
     axios
-      .post("http://localhost:8000/api/blog", formData, {
+      .put(`http://localhost:8000/api/blog/${id}`, formData, {
         headers: {
           Accept: "application/json",
           Authorization: `Bearer ${token}`,
@@ -54,18 +60,19 @@ const CreateBlog = () => {
       });
     setToastifyState({
       ...ToastifyState,
-      message: "Blog added successfully",
+      message: "Blog Updated successfully",
       variant: "success",
       open: true,
     });
     navigate("/admin_dashboard");
     setLoading(false);
   };
+
   return (
     <div>
       <div className="container">
         <form onSubmit={handleSubmit} className="form">
-          <h3 style={{ marginBottom: "10px" }}>Add Post</h3>
+          <h3 style={{ marginBottom: "10px" }}>Edit Post</h3>
           <div>
             <label>Title</label>
             <input
@@ -90,7 +97,7 @@ const CreateBlog = () => {
             <label>Thumbnail</label>
             <input type="file" name="file" onChange={handleImage} />
           </div>
-          <button disabled={loading}>{loading ? "LOADING..." : "POST"}</button>
+          <button disabled={loading}>{loading ? "LOADING..." : "EDIT"}</button>
           {/* <button>submit</button> */}
         </form>
       </div>
@@ -98,4 +105,4 @@ const CreateBlog = () => {
   );
 };
 
-export default CreateBlog;
+export default EditBlog;

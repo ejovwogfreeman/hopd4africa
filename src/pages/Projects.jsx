@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../css/General.css";
 import img from "../assets/img1.jpg";
 import ScrollToTop from "../components/ScrollToTop";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
+  const [project, setProject] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      const res = await fetch("http://localhost:8000/api/project");
+      const data = await res.json();
+      setProject(data.data);
+    };
+    getData();
+  }, []);
+  console.log(project);
   return (
-    <div className="container project">
+    <div className="container project" style={{ color: "white" }}>
       <ScrollToTop />
       <div className="top">
         <div className="img">
@@ -153,6 +164,22 @@ const Projects = () => {
             </p>
           </div>
         </div>
+        {project.map((x) => {
+          return (
+            <div className="cont" key={x.id}>
+              <div>
+                <img src={x.thumbnail} alt="" />
+              </div>
+              <div>
+                <h3>{x.title}</h3>
+                <p>{x.description}</p>
+                <p>
+                  <Link to={`/projects/${x.id}`}>Read more</Link>
+                </p>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

@@ -1,12 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../css/Navbar.css";
 import { Link } from "react-router-dom";
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiOutlineCloseSquare } from "react-icons/ai";
 import { UserContext } from "../context/UserContext";
+import { getToken } from "../api";
 
 const NavbarMobile = ({ open, handleOpen }) => {
-  const [UserState, setUserState] = React.useContext(UserContext);
+  // const token = getToken;
+  // const [UserState, setUserState] = React.useContext(UserContext);
+  const [UserState, setUserState] = useContext(UserContext);
+
+  // console.log(UserState);
+  let user;
+  if (UserState) {
+    user = UserState.data;
+  } else {
+    user = null;
+  }
   const [hide, setHide] = useState(false);
   setTimeout(() => {
     setHide(!false);
@@ -45,7 +56,7 @@ const NavbarMobile = ({ open, handleOpen }) => {
               <li onClick={() => handleOpen()}>
                 <Link to="/blog">News</Link>
               </li>
-              {UserState ? (
+              {user ? (
                 <li onClick={() => handleOpen()}>
                   <Link to="/admin_dashboard">Dashboard</Link>
                 </li>

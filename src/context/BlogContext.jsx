@@ -1,23 +1,22 @@
-import React, { useEffect } from "react";
-import { postBlog } from "../api";
-import { UserContext } from "../context/UserContext";
+// import React, { useEffect } from "react";
 
-export const BlogContext = React.createContext();
+// export const BlogContext = React.createContext();
 
-const BlogComponent = ({ children }) => {
-  const [UserState, setUserState] = React.useContext(UserContext);
-  const [blogState, setBlogState] = React.useState(postBlog);
+// const BlogComponent = ({ children }) => {
+//   const [BlogState, setBlogState] = React.useState({});
 
-  //   useEffect(() => {
-  //     if (!UserState.token) return false;
-  //     postBlog();
-  //   }, [UserState]);
+//   // useEffect(() => {
+//   //   let Blog = localStorage.getItem("Blog");
+//   //   Blog = JSON.parse(Blog);
+//   //   // console.log(Blog);
+//   //   if (Blog) return setBlogState(Blog);
+//   // }, []);
 
-  return (
-    <BlogContext.Provider value={[blogState, setBlogState]}>
-      {children}
-    </BlogContext.Provider>
-  );
-};
+//   return (
+//     <BlogContext.Provider value={[BlogState, setBlogState]}>
+//       {children}
+//     </BlogContext.Provider>
+//   );
+// };
 
-export default BlogComponent;
+// export default BlogComponent;

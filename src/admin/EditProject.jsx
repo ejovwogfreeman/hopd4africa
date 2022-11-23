@@ -4,32 +4,38 @@ import "../css/Admin.css";
 import axios from "axios";
 import { getToken } from "../api";
 
-import { UserContext } from "../context/UserContext";
+// import { UserContext } from "../context/UserContext";
 import { ToastifyContext } from "../context/ToastifyContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-const CreateBlog = () => {
+const EditProject = () => {
   const navigate = useNavigate();
-  const [UserState, setUserState] = React.useState(UserContext);
-  // let user;
-  // if (UserState) {
-  //   user = UserState.data;
-  // } else {
-  //   user = null;
-  // }
+  const params = useParams();
+  //   const [ToastifyState, setToastifyState] = React.useContext(ToastifyContext);
+  const [load, setLoad] = useState(true);
 
-  // useEffect(() => {
-  //   if (user === undefined) {
-  //     navigate("/admin_signin");
-  //   }
-  // });
+  const [project, setProject] = useState({});
+  useEffect(() => {
+    const getData = async (id) => {
+      id = Number(params.id);
+      console.log(id);
+      const res = await fetch(`http://localhost:8000/api/project/${id}`);
+      const data = await res.json();
+      setProject(data.data);
+      setLoad(false);
+    };
+    getData();
+  }, []);
 
+  //   console.log(project.title);
+  let x = project.title && project.title;
+  console.log(x);
   const [ToastifyState, setToastifyState] = React.useContext(ToastifyContext);
   const [loading, setLoading] = useState(false);
 
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const [image, setImage] = useState("");
+  const [title, setTitle] = useState(project.title);
+  const [content, setContent] = useState(project.description);
+  const [image, setImage] = useState(project.thumbnail);
   const handleImage = (e) => {
     setImage(e.target.files[0]);
   };
@@ -39,11 +45,12 @@ const CreateBlog = () => {
     e.preventDefault();
     let formData = new FormData();
     formData.append("title", title);
-    formData.append("content", content);
+    formData.append("description", content);
     formData.append("thumbnail", image);
     const token = getToken();
+    console.log(image);
     axios
-      .post("http://localhost:8000/api/blog", formData, {
+      .post("http://localhost:8000/api/project", formData, {
         headers: {
           Accept: "application/json",
           Authorization: `Bearer ${token}`,
@@ -54,7 +61,7 @@ const CreateBlog = () => {
       });
     setToastifyState({
       ...ToastifyState,
-      message: "Blog added successfully",
+      message: "Project added successfully",
       variant: "success",
       open: true,
     });
@@ -65,22 +72,22 @@ const CreateBlog = () => {
     <div>
       <div className="container">
         <form onSubmit={handleSubmit} className="form">
-          <h3 style={{ marginBottom: "10px" }}>Add Post</h3>
+          <h3 style={{ marginBottom: "10px" }}>Edit Project</h3>
           <div>
             <label>Title</label>
             <input
               type="text"
-              placeholder="Enter Blog Title"
+              placeholder="Enter Project Title"
               value={title}
               required
               onChange={(e) => setTitle(e.target.value)}
             />
           </div>
           <div>
-            <label>Content</label>
+            <label>Desctiption</label>
             <textarea
               type="text"
-              placeholder="Enter Blog Content"
+              placeholder="Enter Project description"
               value={content}
               required
               onChange={(e) => setContent(e.target.value)}
@@ -90,7 +97,7 @@ const CreateBlog = () => {
             <label>Thumbnail</label>
             <input type="file" name="file" onChange={handleImage} />
           </div>
-          <button disabled={loading}>{loading ? "LOADING..." : "POST"}</button>
+          <button disabled={loading}>{loading ? "LOADING..." : "EDIT"}</button>
           {/* <button>submit</button> */}
         </form>
       </div>
@@ -98,4 +105,4 @@ const CreateBlog = () => {
   );
 };
 
-export default CreateBlog;
+export default EditProject;

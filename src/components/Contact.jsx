@@ -26,54 +26,68 @@ const Contact = ({ text, text2 }) => {
         <br />
         {text2}
       </p>
-      <form action="">
+      <form action="" style={{ background: "transparent" }}>
         <div className="row">
           <div>
-            <label htmlFor="">First Name</label>
+            <label htmlFor="" style={{ color: "white" }}>
+              First Name
+            </label>
             <input
               type="text"
               placeholder="Your First Name"
               name="firstname"
               value={firstname}
               onChange={handleChange}
+              style={{ border: "1px solid white" }}
             />
           </div>
           <div>
-            <label htmlFor="">Last Name</label>
+            <label htmlFor="" style={{ color: "white" }}>
+              Last Name
+            </label>
             <input
               type="text"
               placeholder="Your First Name"
               value={lastname}
               name="lastname"
               onChange={handleChange}
+              style={{ border: "1px solid white" }}
             />
           </div>
         </div>
         <div className="row">
           <div>
-            <label htmlFor="">Email</label>
+            <label htmlFor="" style={{ color: "white" }}>
+              Email
+            </label>
             <input
               type="email"
               placeholder="Your First Name"
               value={email}
               name="email"
               onChange={handleChange}
+              style={{ border: "1px solid white" }}
             />
           </div>
           <div>
-            <label htmlFor="">Subject</label>
+            <label htmlFor="" style={{ color: "white" }}>
+              Subject
+            </label>
             <input
               type="text"
               placeholder="Your First Name"
               value={subject}
               name="subject"
               onChange={handleChange}
+              style={{ border: "1px solid white" }}
             />
           </div>
         </div>
         <div className="row">
           <div>
-            <label htmlFor="">Message</label>
+            <label htmlFor="" style={{ color: "white" }}>
+              Message
+            </label>
             <textarea
               id=""
               cols="30"
@@ -82,6 +96,7 @@ const Contact = ({ text, text2 }) => {
               value={message}
               name="message"
               onChange={handleChange}
+              style={{ border: "1px solid white" }}
             ></textarea>
           </div>
         </div>

@@ -11,9 +11,9 @@ import ScrollToTop from "../components/ScrollToTop";
 
 const Team = () => {
   return (
-    <div className="container">
+    <div className="container" style={{ color: "white" }}>
       <ScrollToTop />
-      <div className="team-heading">
+      <div className="team-heading" style={{ color: "black" }}>
         <h1>HOPE4AFRICA Team.</h1>
         <p>DIRECTORS, MANAGERS and ADVISORS</p>
       </div>
