@@ -12,6 +12,12 @@ import { useNavigate } from "react-router-dom";
 const EditBlog = () => {
   const navigate = useNavigate();
   const params = useParams();
+  const [ToastifyState, setToastifyState] = React.useContext(ToastifyContext);
+  const [loading, setLoading] = useState(false);
+
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [image, setImage] = useState("");
 
   const [blog, setBlog] = useState({});
   useEffect(() => {
@@ -20,16 +26,13 @@ const EditBlog = () => {
       const res = await fetch(`http://localhost:8000/api/blog/${id}`);
       const data = await res.json();
       setBlog(data.data);
+      setTitle(data.data.title);
+      setContent(data.data.content);
+      setImage(data.data.thumbnail);
+      setLoading(false);
     };
     getData();
   }, [params.id]);
-
-  const [ToastifyState, setToastifyState] = React.useContext(ToastifyContext);
-  const [loading, setLoading] = useState(false);
-
-  const [title, setTitle] = useState(blog.title);
-  const [content, setContent] = useState(blog.title);
-  const [image, setImage] = useState(blog.title);
 
   const handleImage = (e) => {
     setImage(e.target.files[0]);
@@ -86,6 +89,7 @@ const EditBlog = () => {
               placeholder="Enter Blog Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
+              reguired
             />
           </div>
           <div>
@@ -95,11 +99,12 @@ const EditBlog = () => {
               placeholder="Enter Blog Content"
               value={content}
               onChange={(e) => setContent(e.target.value)}
+              reguired
             />
           </div>
           <div>
             <label>Thumbnail</label>
-            <input type="file" name="file" onChange={handleImage} />
+            <input type="file" name="file" onChange={handleImage} reguired />
           </div>
           <button disabled={loading}>
             {loading ? "LOADING..." : "UPDATE"}

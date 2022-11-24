@@ -11,7 +11,10 @@ import { useNavigate, useParams } from "react-router-dom";
 const EditProject = () => {
   const navigate = useNavigate();
   const params = useParams();
-  const [load, setLoad] = useState(true);
+
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [image, setImage] = useState("");
 
   const [project, setProject] = useState({});
   useEffect(() => {
@@ -20,7 +23,11 @@ const EditProject = () => {
       const res = await fetch(`http://localhost:8000/api/project/${id}`);
       const data = await res.json();
       setProject(data.data);
-      setLoad(false);
+      console.log(data.data);
+      setTitle(data.data.title);
+      setContent(data.data.description);
+      setImage(data.data.thumbnail);
+      setLoading(false);
     };
     getData();
   }, []);
@@ -28,9 +35,6 @@ const EditProject = () => {
   const [ToastifyState, setToastifyState] = React.useContext(ToastifyContext);
   const [loading, setLoading] = useState(false);
 
-  const [title, setTitle] = useState(project.title);
-  const [content, setContent] = useState(project.description);
-  const [image, setImage] = useState(project.thumbnail);
   const handleImage = (e) => {
     setImage(e.target.files[0]);
   };
@@ -86,6 +90,7 @@ const EditProject = () => {
               placeholder="Enter Project Title"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
+              reguired
             />
           </div>
           <div>
@@ -95,11 +100,12 @@ const EditProject = () => {
               placeholder="Enter Project description"
               value={content}
               onChange={(e) => setContent(e.target.value)}
+              reguired
             />
           </div>
           <div>
             <label>Thumbnail</label>
-            <input type="file" name="file" onChange={handleImage} />
+            <input type="file" name="file" onChange={handleImage} reguired />
           </div>
           <button disabled={loading}>
             {loading ? "LOADING..." : "UPDATE"}
