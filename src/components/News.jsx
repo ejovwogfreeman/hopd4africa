@@ -1,7 +1,6 @@
 import React from "react";
 import "../css/News.css";
-import img from "../assets/img1.jpg";
-// import { Link } from "react-router-dom";
+import img from "../assets/construction.jpeg";
 
 const News = () => {
   return (

@@ -9,7 +9,12 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import ScrollToTop from "../components/ScrollToTop";
-import img from "../assets/img1.jpg";
+import img from "../assets/people.webp";
+import img1 from "../assets/t1.webp";
+import img2 from "../assets/t2.webp";
+import img3 from "../assets/t3.webp";
+import img4 from "../assets/t4.webp";
+import img5 from "../assets/t5.webp";
 
 const Timeline = () => {
   return (
@@ -19,7 +24,7 @@ const Timeline = () => {
       <div className="timeline-comp">
         <div className="abs">
           <div className="img">
-            <img src={img} alt="" />
+            <img src={img5} alt="" />
           </div>
           <div className="text">
             <h1>HOPE4AFRICA</h1>
@@ -47,7 +52,7 @@ const Timeline = () => {
           <h1>Timeline</h1>
           <div className="contents">
             <div className="img">
-              <img src={img} alt="" />
+              <img src={img1} alt="" />
               <p>May/2021… “Hope4Africa”</p>
             </div>
             <div className="text">
@@ -61,7 +66,7 @@ const Timeline = () => {
           </div>
           <div className="contents">
             <div className="img">
-              <img src={img} alt="" />
+              <img src={img2} alt="" />
               <p>May/2021… The 1st “Food4Orphans”</p>
             </div>
             <div className="text">
@@ -86,7 +91,7 @@ const Timeline = () => {
           </div>
           <div className="contents">
             <div className="img">
-              <img src={img} alt="" />
+              <img src={img3} alt="" />
               <p>May/2021 Rebuild className="text"ing the “House of Hope”</p>
             </div>
             <div className="text">
@@ -102,7 +107,7 @@ const Timeline = () => {
           </div>
           <div className="contents">
             <div className="img">
-              <img src={img} alt="" />
+              <img src={img4} alt="" />
               <p>Jun/2021 The 1st “Celebrate4Hope”</p>
             </div>
             <div className="text">
@@ -131,7 +136,7 @@ const Timeline = () => {
           </div>
           <div className="contents">
             <div className="img">
-              <img src={img} alt="" />
+              <img src={img4} alt="" />
               <p>Jun/2021 The 1st “Celebrate4Hope”</p>
             </div>
             <div className="text">

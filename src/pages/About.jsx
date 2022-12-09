@@ -7,6 +7,8 @@ import Bible2 from "../components/Bible2";
 import { Link } from "react-router-dom";
 import ScrollToTop from "../components/ScrollToTop";
 import img from "../assets/img1.jpg";
+import img1 from "../assets/building1.webp";
+import img2 from "../assets/building2.webp";
 
 const About = () => {
   return (
@@ -38,12 +40,12 @@ const About = () => {
           <Link to="">DONATE</Link>
         </div>
         <div className="img">
-          <img src={img} alt="" />
+          <img src={img1} alt="" />
         </div>
       </div>
       <div className="about-text2">
         <div className="img">
-          <img src={img} alt="" />
+          <img src={img2} alt="" />
         </div>
         <div className="text">
           <h1>The Great Storms</h1>

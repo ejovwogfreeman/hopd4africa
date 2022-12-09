@@ -8,6 +8,12 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import ScrollToTop from "../components/ScrollToTop";
+import img1 from "../assets/p1.webp";
+import img2 from "../assets/p2.webp";
+import img3 from "../assets/p3.webp";
+import img4 from "../assets/p4.webp";
+import img5 from "../assets/p5.webp";
+import img6 from "../assets/p6.webp";
 
 const Team = () => {
   return (
@@ -20,7 +26,7 @@ const Team = () => {
       <div className="team-members">
         <div className="cont">
           <div className="img">
-            <img src={img} alt="" />
+            <img src={img1} alt="" />
           </div>
           <div className="text">
             <h3>Apama</h3>
@@ -32,7 +38,7 @@ const Team = () => {
         </div>
         <div className="cont">
           <div className="img">
-            <img src={img} alt="" />
+            <img src={img2} alt="" />
           </div>
           <div className="text">
             <h3>Akong</h3>
@@ -43,7 +49,7 @@ const Team = () => {
         </div>
         <div className="cont">
           <div className="img">
-            <img src={img} alt="" />
+            <img src={img3} alt="" />
           </div>
           <div className="text">
             <h3>Grace</h3>
@@ -54,7 +60,7 @@ const Team = () => {
         </div>
         <div className="cont">
           <div className="img">
-            <img src={img} alt="" />
+            <img src={img4} alt="" />
           </div>
           <div className="text">
             <h3>Juliette Anyawara</h3>
@@ -65,7 +71,7 @@ const Team = () => {
         </div>
         <div className="cont">
           <div className="img">
-            <img src={img} alt="" />
+            <img src={img1} alt="" />
           </div>
           <div className="text">
             <h3>Pastor Augustine Ojeka</h3>
@@ -74,7 +80,7 @@ const Team = () => {
         </div>
         <div className="cont">
           <div className="img">
-            <img src={img} alt="" />
+            <img src={img5} alt="" />
           </div>
           <div className="text">
             <h3>Bishop David Anaywara</h3>
@@ -83,7 +89,7 @@ const Team = () => {
         </div>
         <div className="cont">
           <div className="img">
-            <img src={img} alt="" />
+            <img src={img6} alt="" />
           </div>
           <div className="text">
             <h3>Lion of Judah</h3>
