@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/hope4africa/static/css/main.cb5f6667.css",
+    "main.js": "/hope4africa/static/js/main.d836739f.js",
+    "static/js/787.e06e32e4.chunk.js": "/hope4africa/static/js/787.e06e32e4.chunk.js",
+    "static/media/img2.jpg": "/hope4africa/static/media/img2.c23181f5e4a7f3158781.jpg",
+    "static/media/img3.jpg": "/hope4africa/static/media/img3.ae3624d35bf9902499e9.jpg",
+    "static/media/img1.jpg": "/hope4africa/static/media/img1.8f9db10fb009f61d0cc0.jpg",
+    "static/media/building1.webp": "/hope4africa/static/media/building1.c76dfafa14bcf850cc67.webp",
+    "static/media/building2.webp": "/hope4africa/static/media/building2.88e5537e75d3c9f2a68d.webp",
+    "static/media/people.webp": "/hope4africa/static/media/people.d3acc448fa58ee5bef3a.webp",
+    "static/media/construction.jpeg": "/hope4africa/static/media/construction.85e1e4ac6e5f28c5deea.jpeg",
+    "static/media/p4.webp": "/hope4africa/static/media/p4.718358e44356c6bfa5cd.webp",
+    "static/media/p3.webp": "/hope4africa/static/media/p3.2acfdcdce97e59c07b98.webp",
+    "static/media/p2.webp": "/hope4africa/static/media/p2.4ba8ed0e1c040ad540c4.webp",
+    "static/media/p6.webp": "/hope4africa/static/media/p6.5bad34257a9239facfe7.webp",
+    "static/media/t2.webp": "/hope4africa/static/media/t2.0361e64831cc462487e2.webp",
+    "static/media/p5.webp": "/hope4africa/static/media/p5.301d087e244e66fef501.webp",
+    "static/media/t4.webp": "/hope4africa/static/media/t4.0506f38f2618c078baee.webp",
+    "static/media/t3.webp": "/hope4africa/static/media/t3.921e52536433fc6e41e6.webp",
+    "static/media/t1.webp": "/hope4africa/static/media/t1.1f57ff20baa46c90a5a2.webp",
+    "static/media/t5.webp": "/hope4africa/static/media/t5.1f57ff20baa46c90a5a2.webp",
+    "static/media/p1.webp": "/hope4africa/static/media/p1.df9285d39c1a216ddcc5.webp",
+    "index.html": "/hope4africa/index.html",
+    "main.cb5f6667.css.map": "/hope4africa/static/css/main.cb5f6667.css.map",
+    "main.d836739f.js.map": "/hope4africa/static/js/main.d836739f.js.map",
+    "787.e06e32e4.chunk.js.map": "/hope4africa/static/js/787.e06e32e4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cb5f6667.css",
+    "static/js/main.d836739f.js"
+  ]
+}
