@@ -13,6 +13,7 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import { getToken } from "../api";
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   // const token = getToken;
@@ -58,7 +59,15 @@ const Navbar = () => {
         <div className="main-nav">
           <div className="logo">
             <Link to="/">
-              <h1>Hope4Africa</h1>
+              {/* <h1>Hope4Africa</h1> */}
+              <img
+                src={logo}
+                alt=""
+                style={{
+                  width: "150px",
+                  marginLeft: "-10px",
+                }}
+              />
             </Link>
           </div>
           <ul className="links">

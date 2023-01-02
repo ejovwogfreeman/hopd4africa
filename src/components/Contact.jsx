@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/Contact.css";
+import logo from "../assets/logo2.jpg";
 
 const Contact = ({ text, text2 }) => {
   const [formData, setFormData] = useState({
@@ -19,7 +20,15 @@ const Contact = ({ text, text2 }) => {
   return (
     <div className="contact-cont">
       <div className="logo">
-        <h3>Hope4Afica</h3>
+        <img
+          src={logo}
+          alt=""
+          style={{
+            width: "200px",
+            margin: "0px auto 50px",
+            paddingBottom: "10px",
+          }}
+        />
       </div>
       <p>
         {text}

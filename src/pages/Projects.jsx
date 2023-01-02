@@ -1,8 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "../css/General.css";
-import img from "../assets/img1.jpg";
+import img from "../assets/children.webp";
 import ScrollToTop from "../components/ScrollToTop";
 import { Link } from "react-router-dom";
+import img1 from "../assets/pro1.webp";
+import img2 from "../assets/pro2.webp";
+import img3 from "../assets/pro3.webp";
+import img4 from "../assets/pro4.webp";
+import img5 from "../assets/pro5.webp";
+import img6 from "../assets/pro6.webp";
+import img7 from "../assets/pro7.webp";
+import img8 from "../assets/pro8.webp";
+import img9 from "../assets/pro9.webp";
+import img10 from "../assets/pro10.webp";
+import img11 from "../assets/pro11.webp";
 
 const Projects = () => {
   const [project, setProject] = useState([]);
@@ -22,7 +33,7 @@ const Projects = () => {
       <ScrollToTop />
       <div className="top">
         <div className="img">
-          <img src={img} alt="" />
+          <img src={img} alt="" style={{ height: "400px" }} />
         </div>
         <div className="text">
           <h1>
@@ -39,7 +50,7 @@ const Projects = () => {
       <div className="next">
         <div className="cont">
           <div>
-            <img src={img} alt="" />
+            <img src={img1} alt="" />
           </div>
           <div>
             <h3>Hope4Orphans</h3>
@@ -48,7 +59,7 @@ const Projects = () => {
         </div>
         <div className="cont">
           <div>
-            <img src={img} alt="" />
+            <img src={img2} alt="" />
           </div>
           <div>
             <h3>House of Hope Childrens HOPE Center</h3>
@@ -61,7 +72,7 @@ const Projects = () => {
         </div>
         <div className="cont">
           <div>
-            <img src={img} alt="" />
+            <img src={img3} alt="" />
           </div>
           <div>
             <h3>House of Angela Childrens HOPE Center</h3>
@@ -74,7 +85,7 @@ const Projects = () => {
         </div>
         <div className="cont">
           <div>
-            <img src={img} alt="" />
+            <img src={img4} alt="" />
           </div>
           <div>
             <h3>Celebrate4Hope</h3>
@@ -87,7 +98,7 @@ const Projects = () => {
         </div>
         <div className="cont">
           <div>
-            <img src={img} alt="" />
+            <img src={img5} alt="" />
           </div>
           <div>
             <h3>Food4Orphans</h3>
@@ -96,7 +107,7 @@ const Projects = () => {
         </div>
         <div className="cont">
           <div>
-            <img src={img} alt="" />
+            <img src={img6} alt="" />
           </div>
           <div>
             <h3>Other Projects</h3>
@@ -110,7 +121,7 @@ const Projects = () => {
         </div>
         <div className="cont">
           <div>
-            <img src={img} alt="" />
+            <img src={img7} alt="" />
           </div>
           <div>
             <h3>Prosperity4Africa</h3>
@@ -122,7 +133,7 @@ const Projects = () => {
         </div>
         <div className="cont">
           <div>
-            <img src={img} alt="" />
+            <img src={img8} alt="" />
           </div>
           <div>
             <h3>Beds4Africa</h3>
@@ -131,7 +142,7 @@ const Projects = () => {
         </div>
         <div className="cont">
           <div>
-            <img src={img} alt="" />
+            <img src={img9} alt="" />
           </div>
           <div>
             <h3>Bibles4Birthdays</h3>
@@ -143,7 +154,7 @@ const Projects = () => {
         </div>
         <div className="cont">
           <div>
-            <img src={img} alt="" />
+            <img src={img10} alt="" />
           </div>
           <div>
             <h3>House of Grace Childrens HOPE Center</h3>
@@ -156,7 +167,7 @@ const Projects = () => {
         </div>
         <div className="cont">
           <div>
-            <img src={img} alt="" />
+            <img src={img11} alt="" />
           </div>
           <div>
             <h3>House of Hope</h3>

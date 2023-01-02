@@ -1,14 +1,23 @@
 import React from "react";
 import "../css/About.css";
-import img from "../assets/img3.jpg";
+import img from "../assets/children.webp";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo2.jpg";
 
 const About = () => {
   return (
     <div className="about">
       <div className="about-cont">
         <div className="logo">
-          <h1 style={{ margin: "0px 0px 50px" }}>Hope4Africa</h1>
+          <img
+            src={logo}
+            alt=""
+            style={{
+              width: "200px",
+              margin: "0px auto 50px",
+              paddingBottom: "10px",
+            }}
+          />
         </div>
         <div className="contents">
           <div className="img">
@@ -33,7 +42,7 @@ const About = () => {
               continued to look for mutually beneficial business ventures.
             </p>
             <div style={{ marginTop: "20px" }}>
-              <Link to="">Read More</Link>
+              <Link to="/about">Read More</Link>
             </div>
           </div>
         </div>

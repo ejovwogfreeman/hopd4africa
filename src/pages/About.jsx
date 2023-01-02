@@ -76,7 +76,7 @@ const About = () => {
             David also shared that this would now leave many orphans and
             children without proper housing.
           </p>
-          <Link to="">DONATE</Link>
+          <Link to="/donate">DONATE</Link>
         </div>
       </div>
       <Contact

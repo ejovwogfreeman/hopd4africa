@@ -7,7 +7,9 @@ const ContactPg = () => {
   return (
     <div>
       <ScrollToTop />
-      <Contact />
+      <div style={{ paddingTop: "150px" }}>
+        <Contact />
+      </div>
     </div>
   );
 };
