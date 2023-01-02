@@ -9,7 +9,9 @@ const News = () => {
   const [blog, setBlog] = useState([]);
   useEffect(() => {
     const getData = async () => {
-      const res = await fetch("http://localhost:8000/api/blog");
+      const res = await fetch(
+        "http://backend.hope4african.easypredict.live/api/blog"
+      );
       const data = await res.json();
       setBlog(data.data);
     };

@@ -84,7 +84,7 @@ const Signin = () => {
         <button disabled={loading}>{loading ? "LOADING..." : "LOGIN"}</button>
         <section style={{ marginTop: "20px" }}>
           <small>
-            New here? <Link to="/admin_signup">Sign up</Link>
+            New here? <Link to="/signup">Sign up</Link>
           </small>
         </section>
       </form>

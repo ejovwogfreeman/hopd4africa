@@ -20,7 +20,9 @@ const EditProject = () => {
   useEffect(() => {
     const getData = async (id) => {
       id = Number(params.id);
-      const res = await fetch(`http://localhost:8000/api/project/${id}`);
+      const res = await fetch(
+        `http://backend.hope4african.easypredict.live/api/project/${id}`
+      );
       const data = await res.json();
       setProject(data.data);
       console.log(data.data);
@@ -49,12 +51,16 @@ const EditProject = () => {
     const token = getToken();
     let id = project.id;
     axios
-      .post(`http://localhost:8000/api/project/${id}`, formData, {
-        headers: {
-          Accept: "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      })
+      .post(
+        `http://backend.hope4african.easypredict.live/api/project/${id}`,
+        formData,
+        {
+          headers: {
+            Accept: "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
       .then((res) => {
         console.log(res);
         setToastifyState({

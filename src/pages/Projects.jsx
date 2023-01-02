@@ -8,7 +8,9 @@ const Projects = () => {
   const [project, setProject] = useState([]);
   useEffect(() => {
     const getData = async () => {
-      const res = await fetch("http://localhost:8000/api/project");
+      const res = await fetch(
+        "http://backend.hope4african.easypredict.live/api/project"
+      );
       const data = await res.json();
       setProject(data.data);
     };

@@ -23,7 +23,9 @@ const EditBlog = () => {
   useEffect(() => {
     const getData = async (id) => {
       id = Number(params.id);
-      const res = await fetch(`http://localhost:8000/api/blog/${id}`);
+      const res = await fetch(
+        `http://backend.hope4african.easypredict.live/api/blog/${id}`
+      );
       const data = await res.json();
       setBlog(data.data);
       setTitle(data.data.title);
@@ -48,12 +50,16 @@ const EditBlog = () => {
     const token = getToken();
     let id = blog.id;
     axios
-      .post(`http://localhost:8000/api/blog/${id}`, formData, {
-        headers: {
-          Accept: "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      })
+      .post(
+        `http://backend.hope4african.easypredict.live/api/blog/${id}`,
+        formData,
+        {
+          headers: {
+            Accept: "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
       .then((res) => {
         console.log(res);
         setToastifyState({

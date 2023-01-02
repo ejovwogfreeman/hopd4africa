@@ -20,7 +20,9 @@ const BlogDetails = () => {
   useEffect(() => {
     const getData = async (id) => {
       id = Number(params.id);
-      const res = await fetch(`http://localhost:8000/api/project/${id}`);
+      const res = await fetch(
+        `http://backend.hope4african.easypredict.live/api/project/${id}`
+      );
       const data = await res.json();
       setProject(data.data);
     };
@@ -31,11 +33,14 @@ const BlogDetails = () => {
     const token = getToken();
     let id = project.id;
     axios
-      .delete(`http://localhost:8000/api/project/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+      .delete(
+        `http://backend.hope4african.easypredict.live/api/project/${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
       .then((res) => {
         console.log(res);
       });

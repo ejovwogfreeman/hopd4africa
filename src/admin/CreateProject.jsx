@@ -43,12 +43,16 @@ const CreateProject = () => {
     const token = getToken();
     console.log(image);
     axios
-      .post("http://localhost:8000/api/project", formData, {
-        headers: {
-          Accept: "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-      })
+      .post(
+        "http://backend.hope4african.easypredict.live/api/project",
+        formData,
+        {
+          headers: {
+            Accept: "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
       .then((res) => {
         console.log(res);
         setToastifyState({

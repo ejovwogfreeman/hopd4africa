@@ -40,6 +40,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "eslint-config-react-app": "^7.0.1"
   }
 }

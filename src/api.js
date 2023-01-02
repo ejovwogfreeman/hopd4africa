@@ -3,14 +3,17 @@
 ///////////////////
 
 export const registerUser = async (user) => {
-  const res = await fetch("http://localhost:8000/api/auth/register", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify(user),
-  });
+  const res = await fetch(
+    "http://backend.hope4african.easypredict.live/api/auth/register",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(user),
+    }
+  );
 
   const register = res.json();
 
@@ -22,14 +25,17 @@ export const registerUser = async (user) => {
 ///////////////////
 
 export const loginUser = async (user) => {
-  const res = await fetch("http://localhost:8000/api/auth/login", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify(user),
-  });
+  const res = await fetch(
+    "http://backend.hope4african.easypredict.live/api/auth/login",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(user),
+    }
+  );
   const login = await res.json();
   return login;
 };

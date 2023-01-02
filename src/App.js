@@ -23,6 +23,7 @@ import BlogDetails from "./pages/BlogDetails";
 import EditBlog from "./admin/EditBlog";
 import ProjectDetails from "./pages/ProjectDetails";
 import EditProject from "./admin/EditProject";
+import ProtectedRoutes from "./components/ProtectedRoutes";
 
 function App() {
   return (
@@ -41,17 +42,30 @@ function App() {
               <Route path="/team" element={<Team />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/projects/:id" element={<ProjectDetails />} />
-              <Route path="/edit_project/:id" element={<EditProject />} />
+              <Route element={<ProtectedRoutes />}>
+                <Route path="/edit_project/:id" element={<EditProject />} />
+              </Route>
               <Route path="/contact" element={<ContactPg />} />
               <Route path="/blog" element={<News />} />
               <Route path="/blog/:id" element={<BlogDetails />} />
-              <Route path="/edit_blog/:id" element={<EditBlog />} />
+              <Route element={<ProtectedRoutes />}>
+                <Route path="/edit_blog/:id" element={<EditBlog />} />
+              </Route>
               <Route path="/donate" element={<Donate />} />
-              <Route path="/admin_signup" element={<Signup />} />
-              <Route path="/admin_signin" element={<Signin />} />
-              <Route path="/admin_dashboard" element={<Dashboard />} />
-              <Route path="/admin_create_blog" element={<CreateBlog />} />
-              <Route path="/admin_create_project" element={<CreateProject />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/signin" element={<Signin />} />
+              <Route element={<ProtectedRoutes />}>
+                <Route path="/admin_dashboard" element={<Dashboard />} />
+              </Route>
+              <Route element={<ProtectedRoutes />}>
+                <Route path="/admin_create_blog" element={<CreateBlog />} />
+              </Route>
+              <Route element={<ProtectedRoutes />}>
+                <Route
+                  path="/admin_create_project"
+                  element={<CreateProject />}
+                />
+              </Route>
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>

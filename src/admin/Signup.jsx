@@ -130,7 +130,7 @@ const Signup = () => {
         </button>
         <section style={{ marginTop: "20px" }}>
           <small>
-            Already have an account? <Link to="/admin_signin">Sign In</Link>
+            Already have an account? <Link to="/signin">Sign In</Link>
           </small>
         </section>
       </form>

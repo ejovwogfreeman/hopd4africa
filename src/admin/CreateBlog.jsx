@@ -43,7 +43,7 @@ const CreateBlog = () => {
     formData.append("thumbnail", image);
     const token = getToken();
     axios
-      .post("http://localhost:8000/api/blog", formData, {
+      .post("http://backend.hope4african.easypredict.live/api/blog", formData, {
         headers: {
           Accept: "application/json",
           Authorization: `Bearer ${token}`,
