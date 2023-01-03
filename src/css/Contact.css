@@ -20,6 +20,7 @@ form input,
 form label {
   display: block;
   margin-bottom: 10px;
+  color: white;
 }
 
 form input,

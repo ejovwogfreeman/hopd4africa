@@ -47,7 +47,7 @@ const Contact = ({ text, text2 }) => {
               name="firstname"
               value={firstname}
               onChange={handleChange}
-              style={{ border: "1px solid white" }}
+              style={{ border: "1px solid white", color: "white" }}
             />
           </div>
           <div>
@@ -60,7 +60,7 @@ const Contact = ({ text, text2 }) => {
               value={lastname}
               name="lastname"
               onChange={handleChange}
-              style={{ border: "1px solid white" }}
+              style={{ border: "1px solid white", color: "white" }}
             />
           </div>
         </div>
@@ -75,7 +75,7 @@ const Contact = ({ text, text2 }) => {
               value={email}
               name="email"
               onChange={handleChange}
-              style={{ border: "1px solid white" }}
+              style={{ border: "1px solid white", color: "white" }}
             />
           </div>
           <div>
@@ -88,7 +88,7 @@ const Contact = ({ text, text2 }) => {
               value={subject}
               name="subject"
               onChange={handleChange}
-              style={{ border: "1px solid white" }}
+              style={{ border: "1px solid white", color: "white" }}
             />
           </div>
         </div>
@@ -105,15 +105,10 @@ const Contact = ({ text, text2 }) => {
               value={message}
               name="message"
               onChange={handleChange}
-              style={{ border: "1px solid white" }}
+              style={{ border: "1px solid white", color: "white" }}
             ></textarea>
           </div>
         </div>
-        <p>{firstname}</p>
-        <p>{lastname}</p>
-        <p>{email}</p>
-        <p>{subject}</p>
-        <p>{message}</p>
         <div className="row">
           <button>SUBMIT</button>
         </div>
